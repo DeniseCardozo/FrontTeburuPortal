@@ -1,0 +1,44 @@
+<div id="id01" class="modalFile" >
+  <div class="contenedorPrincipal">
+    <img class="icon_cerrarModal"
+         src="../../assets/image/cerrar.png"
+         alt=""
+         (click)="cerrarModal()" >
+    <div class="contenedorSecundario">
+
+
+      <h2 class="titulo">Subir Archivo de la Tabla</h2>
+      <form enctype="multipart/form-data">
+        <input class="input_file"
+               type="file"
+               (change)="seleccionarFile($event)">
+
+      </form>
+      <button class="button_EditarTabla"
+              type="submit"
+              (click)="subirFile(id_tabla)">
+        Subir archivo
+      </button>
+      <button class="button_cancelar"
+              type="button"
+              (click)="cerrarModal()">
+        Cancelar
+      </button>
+      <!--  <div class="button_subirArchivo" >-->
+      <!--&lt;!&ndash;       (click)="subirFile(tabla.id_tabla)"&ndash;&gt;-->
+
+      <!--    <img class="image_okArchivo"-->
+      <!--         src="../../assets/image/ok.png"-->
+      <!--         alt="logo ok">-->
+      <!--  </div>-->
+      <!--  <div class="button_cancelarSubida">-->
+      <!--    <img class="image_cancelarSubida"-->
+      <!--         src="../../assets/image/cancelar.png"-->
+      <!--         alt="logo cancelar">-->
+      <!--  </div>-->
+    </div>
+
+  </div>
+</div>
+
+

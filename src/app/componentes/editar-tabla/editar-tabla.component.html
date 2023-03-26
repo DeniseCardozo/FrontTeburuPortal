@@ -1,0 +1,45 @@
+<div id="id01" class="modal" >
+  <form class="form"
+        [formGroup]="formEditarTablaGroup" >
+    <img class="icon_cerrarModal"
+         src="../../assets/image/cerrar.png"
+         alt=""
+         (click)="cerrarModal()" >
+    <div class="container">
+      <h2 class="titulo_editar">Editar Datos de la Tabla</h2>
+      <label>Nombre:
+        <input type="text"
+               name="nombre"
+               formControlName="nombre"
+               required>
+      </label>
+
+      <label>Schema
+        <input type="text"
+               name="esquema"
+               formControlName="esquema"
+               required>
+      </label>
+
+<!--      <label>Carácteres no permitidos-->
+<!--        <input type="text"-->
+<!--               name="caracteres_especiales"-->
+<!--               formControlName="caracteres_especiales"-->
+<!--               required>-->
+<!--      </label>-->
+
+      <button class="button_EditarTabla"
+              type="submit"
+              (click)="actualizarDatosTabla()">
+        Editar tabla
+      </button>
+      <button class="button_cancelar"
+              type="button"
+              (click)="cerrarModal()">
+        Cancelar
+      </button>
+    </div>
+
+  </form>
+</div>
+

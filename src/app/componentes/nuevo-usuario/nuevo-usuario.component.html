@@ -1,0 +1,36 @@
+<div class="contenedorBody">
+
+<div class="contenedorPrincipal">
+  <h3 class="titulo_formulario">CREAR NUEVO USUARIO</h3>
+  <form #formSignup="ngForm"
+        (ngSubmit)="signUp(formSignup)">
+    <div class="contenedor_usuarios">
+      <div class="contenedor_inputUsuarios">
+        <p class="descripcion">Ingrese el mail del usuario</p>
+        <input type="email"
+               name="email"
+               [(ngModel)]="datosUsuario.email"
+               #emailControl="ngModel"
+               placeholder="Ejemplo: empleado@ejemplo.com"
+               required
+               pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+        <div *ngIf="emailControl.invalid && emailControl.dirty"
+             class="contenedorAlerta">
+          <p *ngIf="emailControl.errors['required']"
+             class="errorTexto">
+            Campo requerido
+          </p>
+          <p *ngIf="emailControl.errors['pattern'] && emailControl.touched"
+             class="errorTexto">
+            Por favor ingrese un email con el formato <i>"name@example.com"</i>
+          </p>
+        </div>
+        <button class="button_agregarUsuario" [disabled]="formSignup.invalid">Crear Usuario</button>
+      </div>
+      <div>
+<!--        <a id="sendMail" href="mailto:{{nuevoUsuario.email}}?subject={{subject}}&body={{body}}"></a>-->
+      </div>
+    </div>
+  </form>
+</div>
+</div>

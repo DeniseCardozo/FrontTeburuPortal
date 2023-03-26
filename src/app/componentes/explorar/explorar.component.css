@@ -1,0 +1,170 @@
+* {
+  box-sizing: border-box;
+}
+
+.contenedorBody {
+  padding: 30px 30px 30px 120px;
+}
+
+.contenedor_Total, .contenedor_Area, .contenedor_Proyecto, .contenedor_TotalTablas, .contenedor_Tabla, .contenedor_botones, .input_labelTabla, .contenedor_AreaRefuerzo, .contenedor_TotalAreas, .contenedor_TotalProyectos, .button_previewtabla, .button_editartabla, .button_eliminartabla, .contenedor_TablaPrincipal, .contenedor_inputFile  {
+  display: flex;
+}
+
+.icon_cerrar {
+  height: 20px;
+  width: 20px;
+  filter:  invert(0.8);
+  display: block;
+  margin: 0 0 0 auto;
+}
+
+.icon_cerrar:hover {
+  transform: scale(1.3);
+}
+
+.contenedor_Areas, .contenedor_Proyectos, .contenedor_Tablas {
+  background-color:  rgba(0, 0, 0, 0.327);
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  padding: 40px;
+}
+
+.contenedor_AreaRefuerzo {
+  width: 100%;
+
+}
+.contenedor_TotalAreas, .contenedor_Total {
+  gap: 25px;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.subtitulos_explorar {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 100;
+  font-size: 40px;
+  text-align: center;
+  margin: 0 0 20px 0;
+}
+
+.contenedor_Total, .contenedor_TotalTablas, .contenedor_botones {
+  gap: 10px;
+}
+
+.contenedor_Total {
+  justify-content: center;
+}
+
+.contenedor_TotalTablas {
+  flex-direction: column;
+  align-items: center;
+}
+
+.contenedor_Area, .contenedor_Proyecto, .contenedor_Tabla {
+  background-color:  rgba(0, 0, 0, 0.29);
+  border-radius: 8px;
+  align-items: center;
+
+}
+
+.contenedor_Area, .contenedor_Proyecto {
+  width: 350px;
+  height: 100px;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+}
+
+.contenedor_Tabla {
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  padding: 30px 40px;
+  min-height: 100px;
+}
+.contenedor_TablaPrincipal {
+  width: 100%;
+  justify-content:space-between;
+}
+
+.contenedor_inputFile {
+  align-items: center;
+  width: 100%;
+  margin: 20px 0 0 0;
+  padding-top: 20px;
+  gap: 10px;
+  justify-content: flex-end;
+  border-top: solid 1px rgba(255, 255, 255, 0.247);
+}
+
+.botonFile {
+  height: 40px;
+  border: none;
+  font-size: 18px;
+  border-radius: 8px;
+  background-color:  rgba(0, 0, 0, 0.29);
+  font-weight: bolder;
+}
+
+.contenedor_Area:hover, .contenedor_Proyecto:hover {
+  background-color:  rgba(255, 255, 255, 0.29);
+  color: rgb(40, 39, 39);
+  transform:rotate(5deg);
+  cursor: pointer;
+}
+
+.nombre_Tabla {
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+}
+
+.button_previewtabla, .input_labelTabla, .button_editartabla, .button_eliminartabla {
+  background-color:  rgba(0, 0, 0, 0.29);
+  height: 60px;
+  width: 60px;
+  align-items:center;
+  border: none;
+  border-radius: 8px;
+  justify-content: center;
+}
+
+.input_labelTabla {
+  align-items: center;
+  justify-content: center;
+}
+
+.input_fileTabla {
+  /* width: 0.1px;
+  height: 0.1px; */
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  height: 60px;
+  width: 60px;
+  /* z-index: -1; */
+}
+
+.button_previewtabla:hover, .input_labelTabla:hover, .button_editartabla:hover, .button_eliminartabla:hover {
+  background-color:  rgba(255, 255, 255, 0.29);
+  color: rgb(40, 39, 39);
+  transform:rotate(5deg);
+  cursor: pointer;
+}
+
+.image_preview, .image_subirArchivo, .image_modificarTabla, .image_eliminar {
+  height: 30px;
+  width: 30px;
+  filter:  invert(0.8);
+}
+
+.contenedor_previsualizador {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+

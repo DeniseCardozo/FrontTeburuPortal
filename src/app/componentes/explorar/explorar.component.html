@@ -1,0 +1,81 @@
+<div class="contenedorBody">
+  <app-nav-bar></app-nav-bar>
+
+  <div class="contenedor_Areas">
+    <h2 class="subtitulos_explorar">ÁREAS</h2>
+    <div id="contenedor_TotalAreas" class="contenedor_TotalAreas">
+      <div class="contenedor_Area"
+           *ngFor="let area of mostrarAreas"
+           (click)="mostrarAllProyectos(area.id_area)">
+        <p>{{area.nombre}}</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="contenedor_Proyectos" *ngIf="contenedorProyectos">
+    <h2 class="subtitulos_explorar">PROYECTOS del área de {{datosArea.nombre}}</h2>
+    <div id="contenedor_TotalProyectos" class="contenedor_Total">
+      <div id="contenedor_Proyecto"
+           class="contenedor_Proyecto"
+           *ngFor="let proyecto of mostrarProyectos"
+           (click)="mostarAllTablas(proyecto.id_proyecto)">
+        <p>{{proyecto.nombre}}</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="contenedor_Tablas" *ngIf="contenedorTablas">
+    <h2 class="subtitulos_explorar">TABLAS del proyecto {{datosProyecto.nombre}}</h2>
+    <div id="contenedor_TotalTablas"
+         class="contenedor_TotalTablas">
+      <div class="contenedor_Tabla"
+           *ngFor="let tabla of mostrarTablas">
+        <div class="contenedor_TablaPrincipal">
+        <p class="nombre_Tabla">{{tabla.nombre}}</p>
+        <div class="contenedor_botones">
+          <div id="button_previewtabla"
+               class="button_previewtabla"
+               (click)="showPrevisualizador(tabla.id_tabla)">
+            <img class="image_preview"
+                 src="../../assets/image/preview.png"
+                 alt="logo preview">
+          </div>
+          <div class="input_labelTabla"
+                 (click)="showInputFile(tabla.id_tabla)" >
+            <img class="image_subirArchivo"
+                 src="../../assets/image/subir-archivo.png"
+                 alt="logo subirArchivo">
+          </div>
+          <div id="button_editartabla"
+               class="button_editartabla"
+               (click)="showModal(tabla.id_tabla)"
+               *ngIf="showBotones">
+            <img class="image_modificarTabla"
+                 src="../../assets/image/editar.png"
+                 alt="logo modificar">
+          </div>
+          <div id="button_eliminartabla"
+               class="button_eliminartabla"
+               *ngIf="showBotones"
+               (click)="eliminarTabla(tabla.id_tabla)">
+            <img class="image_eliminar"
+                 src="../../assets/image/eliminar.png"
+                 alt="logo eliminar">
+          </div>
+        </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <div *ngIf="modalSwitch">
+    <app-editar-tabla [id_tabla] = id_tabla></app-editar-tabla>
+  </div>
+  <div class="contenedor_inputFile" *ngIf="inputFile">
+    <app-subir-archivo [id_tabla] = id_tabla></app-subir-archivo>
+  </div>
+  <div class="contenedor_previsualizador" *ngIf="previsualizador">
+    <app-previsualizador [id_tabla] = id_tabla>></app-previsualizador>
+  </div>
+
+</div>

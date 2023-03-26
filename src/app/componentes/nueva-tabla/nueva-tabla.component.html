@@ -1,0 +1,150 @@
+<app-nuevo-usuario></app-nuevo-usuario>
+<div class="contenedorBody">
+  <app-nav-bar></app-nav-bar>
+
+  <div class="contenedor_Formulario">
+    <form [formGroup]="formNewTablaGroup"
+          id="form">
+      <h2 class="titulo_formulario">CREAR NUEVA TABLA</h2>
+      <div class="linea_separadora"></div>
+      <h3 class="subtitulo_formulario">Área</h3>
+      <p class="descripcion">Seleccione el Área correspondiente, si no existe seleccione CREAR ÁREA</p>
+      <select name="areas"
+              id="select_Areas"
+              formControlName="areas"
+              (click)="getProyectos()">
+        <option value="">Seleccione un Área</option>
+        <option *ngFor="let area of datosAreas"
+                value="{{area.id_area}}" >
+                {{area.nombre}}
+        </option>
+        <option value="crearNuevo">CREAR ÁREA</option>
+      </select>
+
+      <div *ngIf="formNewTablaGroup.controls['areas'].errors && formNewTablaGroup.controls['areas'].touched"
+           class="contenedorAlerta">
+        <p *ngIf="formNewTablaGroup.controls['areas'].errors['nadaSeleccionado']"
+           class="errorTexto">Campo obligatorio - Seleccionar área</p>
+      </div>
+
+      <input class="input_nuevaArea"
+             type="text"
+             name="areas"
+             id="input_nuevaArea"
+             placeholder="Insertar nombre de nueva área"
+             formControlName="areas"
+             *ngIf="inputNuevaArea">
+
+      <div *ngIf="formNewTablaGroup.controls['areas'].errors && formNewTablaGroup.controls['areas'].dirty"
+           class="contenedorAlerta">
+        <p *ngIf="formNewTablaGroup.controls['areas'].errors['nadaSeleccionado']"
+           class="errorTexto">Campo obligatorio</p>
+      </div>
+
+
+      <div class="linea_separadora"></div>
+      <h3 class="subtitulo_formulario">Proyecto</h3>
+      <p id="descripcion_proyecto"
+         class="descripcion">
+        Seleccione el Proyecto correspondiente, si no existe seleccione CREAR PROYECTO
+      </p>
+
+      <select name="proyectos"
+              id="select_Proyectos"
+              formControlName="proyectos"
+              *ngIf="selectProyectos"
+              (click)="mostrarInputNewProyecto()">
+        <option value="">Seleccione un Proyecto</option>
+        <option *ngFor="let proyecto of datosProyectos"
+                value="{{proyecto.id_proyecto}}" >
+          {{proyecto.nombre}}
+        </option>
+        <option value="crear_proyecto">CREAR PROYECTO</option>
+      </select>
+
+      <div *ngIf="formNewTablaGroup.controls['proyectos'].errors && formNewTablaGroup.controls['proyectos'].touched"
+           class="contenedorAlerta">
+        <p *ngIf="formNewTablaGroup.controls['proyectos'].errors['nadaSeleccionado']"
+           class="errorTexto">Campo obligatorio - Seleccionar proyecto</p>
+      </div>
+
+      <p id="proyecto_seleccionado"></p>
+
+      <input class="input_nuevoProyecto"
+             type="text"
+             name="proyectos"
+             id="input_nuevoProyecto"
+             placeholder="Insertar nombre de nuevo proyecto"
+             formControlName="proyectos"
+             *ngIf="inputNuevoProyecto">
+
+      <div *ngIf="formNewTablaGroup.controls['proyectos'].errors && formNewTablaGroup.controls['proyectos'].dirty"
+           class="contenedorAlerta">
+        <p *ngIf="formNewTablaGroup.controls['proyectos'].errors['nadaSeleccionado']"
+           class="errorTexto">Campo obligatorio</p>
+      </div>
+
+      <div class="linea_separadora"></div>
+      <h3 class="subtitulo_formulario">Tabla</h3>
+      <label>Nombre
+        <input id="input_nombreTabla"
+               type="text"
+               placeholder="Inserte nombre de tabla"
+               formControlName="tablaNueva"
+               name="nombre">
+      </label>
+
+      <div *ngIf="formNewTablaGroup.controls['tablaNueva'].errors && formNewTablaGroup.controls['tablaNueva'].dirty"
+           class="contenedorAlerta">
+        <p *ngIf="formNewTablaGroup.controls['tablaNueva'].errors['required']"
+           class="errorTexto">Campo obligatorio</p>
+      </div>
+
+      <label for="input_schema" id="label_Schema">Schema</label>
+      <p class="descripcion"><strong>1) Estructura de la información para una columna:</strong></p>
+      <p class="descripcion">Inserte el nombre de la columna (sin espacios), el tipo de dato deseado y si permite datos nulos o no (NULL o NOTNULL).</p>
+      <p class="descripcion">A esta información separela con coma ",". <i>Por ejemplo: Producto,varchar(30),NOTNULL</i></p>
+      <p class="descripcion"><strong>2) Repita esto último para cada columna y separe la información entre cada una con un guión medio "-". </strong></p>
+      <p class="descripcion"><i>Por ejemplo: Producto,varchar(30),NOTNULL-Precio,int,NOTNULL-Stock,int,NULL</i></p>
+      <input type="text"
+             name="esquema"
+             id="input_schema"
+             placeholder="Inserte schema de la tabla"
+             formControlName="esquema">
+
+      <div *ngIf="formNewTablaGroup.controls['esquema'].errors && formNewTablaGroup.controls['esquema'].dirty"
+           class="contenedorAlerta">
+        <p *ngIf="formNewTablaGroup.controls['esquema'].errors['required']"
+           class="errorTexto">Campo obligatorio</p>
+        <p *ngIf="formNewTablaGroup.controls['esquema'].errors['contieneEspacios']"
+           class="errorTexto">No puede contener espacios</p>
+        <p *ngIf="formNewTablaGroup.controls['esquema'].errors['contieneCaracteresEspeciales']"
+           class="errorTexto">No puede contener ñ, tíldes y/o carácteres especiales. </p>
+        <p *ngIf="formNewTablaGroup.controls['esquema'].errors['contieneCaracteresEspeciales']"
+           class="errorTexto">Únicos carácteres permitidos sólo para separación de información: , - ()</p>
+      </div>
+
+<!--      <p class="descripcionCaracteres">A continuación inserte los carácteres que no estarán permitidos en los nombres de las columnas, sin separarlos por espacios. <i>NOTA: el espacio es considerado un caracter más</i></p>-->
+<!--      <input type="text"-->
+<!--             placeholder="Inserte carácteres"-->
+<!--             formControlName="caracteres_especiales"-->
+<!--             name="caracteres_especiales">-->
+
+<!--      <div *ngIf="formNewTablaGroup.controls['caracteres_especiales'].errors && formNewTablaGroup.controls['caracteres_especiales'].dirty"-->
+<!--           class="contenedorAlerta">-->
+<!--        <p *ngIf="formNewTablaGroup.controls['caracteres_especiales'].errors['required']"-->
+<!--           class="errorTexto">Campo obligatorio</p>-->
+<!--      </div>-->
+
+      <div class="linea_separadora"></div>
+
+      <button (click)="armarTabla()"
+              [disabled]="formNewTablaGroup.invalid"
+              class="button_crearTabla"
+              [ngStyle]="formNewTablaGroup.invalid && {'background-color':  'rgba(141, 101, 101, 0.618)', 'transform':'rotate(0deg)' } ">
+       {{formNewTablaGroup.invalid?"Aun no puede crear!":"Crear Tabla"}}
+      </button>
+    </form>
+  </div>
+</div>
+

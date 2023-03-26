@@ -1,1 +1,67 @@
 /* You can add global styles to this file, and also import other style files */
+* {
+  box-sizing: border-box;
+  color: rgb(225, 216, 216);
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;
+  background: url(/assets/image/fondo.webp) no-repeat;
+  background-size: cover;
+  background-attachment: scroll;
+}
+
+
+
+
+
+/* ///////////////////swal2////////////////////////// */
+
+.swal2-title {
+  font-family: 'Montserrat', sans-serif !important;
+
+}
+
+/* .swal2-html-container{*/
+/*  font-family: "Times New Roman", Times, serif;*/
+/*  font-size: 20px !important;*/
+/*  background-color: blue !important;*/
+
+/*} */
+
+.swal2-modal {
+  background-color: #a5dc86 !important;
+  background-color:  rgba(0, 0, 0, 0.29) !important;
+  backdrop-filter: blur(10px) !important;
+  border-radius: 8px !important;
+  color: aliceblue !important;
+  font-family: 'Roboto', sans-serif !important;
+  border: solid 0.5px rgba(255, 255, 255, 0.153) !important;
+}
+
+
+.swal2-deny, .swal2-cancel .swal2-styled{
+  font-family: 'Roboto', sans-serif !important;
+  background-color:  rgba(0, 0, 0, 0.29) !important;
+}
+
+/*
+  .swal2-confirm {
+    background-color: orange !important;
+  } */
+
+.colored-toast {
+  background-color:  rgba(0, 0, 0, 0.497) !important;
+  /*backdrop-filter: blur(20px) !important;*/
+}
+
+.colored-toast, .swal2-title {
+  color: aliceblue !important;
+}

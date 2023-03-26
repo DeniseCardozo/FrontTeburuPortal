@@ -1,0 +1,134 @@
+* {
+  box-sizing: border-box;
+}
+
+.contenedorBody {
+  padding: 30px 30px 30px 120px;
+}
+
+.contenedor_Formulario {
+  background-color:  rgba(0, 0, 0, 0.327);
+  width: 100%;
+  padding: 50px 160px;
+  border-radius: 8px;
+}
+
+.linea_separadora {
+  width: 100%;
+  border-top: solid 1px rgba(255, 255, 255, 0.247);
+  margin: 40px 0;
+}
+
+.titulo_formulario {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 100;
+  font-size: 40px;
+  text-align: center;
+  margin: 0 0 30px 0;
+}
+
+.subtitulo_formulario, .descripcion, select, label, input, button, .descripcionCaracteres {
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+}
+
+.subtitulo_formulario {
+  margin: 0;
+}
+
+.descripcion, .descripcionCaracteres {
+  font-size: 16px;
+  margin: 0 0 10px 0;
+}
+
+.descripcionCaracteres{
+  margin-top: 25px;
+}
+
+input, select {
+  height: 40px;
+  border: none;
+  font-size: 18px;
+  background-color:  rgba(0, 0, 0, 0.327);
+  padding-left: 20px;
+  color: rgb(208, 196, 181);
+  border-radius: 8px;
+}
+
+option {
+  background-color:  rgb(46, 46, 46);
+  height: 40px;
+}
+
+select {
+  width: 300px;
+  margin-right: 10px ;
+}
+
+label {
+  display: block;
+}
+
+input {
+  width: 400px;
+}
+
+#input_nombreTabla {
+  margin-left: 10px;
+}
+
+#label_Schema {
+  margin-top: 25px;
+}
+
+#input_schema, #input_caracteres {
+  width: 100%;
+}
+
+#input_schema {
+
+}
+
+.button_crearTabla, .button_cancelar {
+  height: 40px;
+  border: none;
+  font-size: 18px;
+  border-radius: 8px;
+  background-color:  rgba(0, 0, 0, 0.29);
+  font-weight: bolder;
+}
+
+.button_crearTabla {
+  width: 300px;
+  margin-right: 10px;
+}
+
+.button_cancelar {
+  width: 200px;
+}
+
+.button_crearTabla:hover {
+  background-color:  rgba(95, 198, 97, 0.472);
+  transform:rotate(5deg);
+  cursor: pointer;
+}
+
+.button_cancelar:hover {
+  background-color:  rgba(193, 76, 76, 0.472);
+  transform:rotate(5deg);
+  cursor: pointer;
+}
+
+
+.contenedorAlerta {
+  width: 100%;
+  margin: 0;
+}
+
+.errorTexto {
+  font-family: 'Montserrat', sans-serif;
+  margin: 8px 0 0 0 ;
+  text-align: end;
+}
+
+

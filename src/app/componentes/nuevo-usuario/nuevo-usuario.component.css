@@ -1,0 +1,88 @@
+.contenedorBody {
+  padding: 30px 30px 0 120px;
+
+}
+
+.contenedorPrincipal {
+  background-color:  rgba(0, 0, 0, 0.327);
+  width: 100%;
+  padding: 50px 160px;
+  border-radius: 8px;
+}
+
+.contenedor_usuarios {
+  display: flex;
+  justify-content: space-between ;
+}
+
+.titulo_formulario {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 100;
+  font-size: 40px;
+  text-align: center;
+  margin: 0 0 30px 0;
+}
+
+.subtitulo_formulario, .descripcion, select, label, input, button {
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+}
+
+
+.subtitulo_formulario {
+  margin: 0;
+}
+
+.contenedor_inputUsuarios {
+  display: flex;
+  flex-direction: column;
+}
+
+.descripcion {
+  font-size: 16px;
+  margin: 0 0 10px 0;
+}
+
+label {
+  display: block;
+}
+
+input {
+  height: 40px;
+  width: 400px;
+  border: none;
+  font-size: 18px;
+  background-color:  rgba(0, 0, 0, 0.327);
+  padding-left: 20px;
+  color: rgb(208, 196, 181);
+  border-radius: 8px;
+}
+
+.button_agregarUsuario {
+  height: 40px;
+  border: none;
+  font-size: 18px;
+  border-radius: 8px;
+  background-color:  rgba(0, 0, 0, 0.29);
+  font-weight: bolder;
+  margin-top: 10px;
+  width: 200px;
+}
+
+.button_agregarUsuario:hover {
+  background-color:  rgba(255, 255, 255, 0.29);
+  color: rgb(40, 39, 39);
+  transform:rotate(5deg);
+  cursor: pointer;
+}
+
+.contenedorAlerta {
+  width: 100%;
+  margin: 0;
+}
+
+.errorTexto {
+  font-family: 'Montserrat', sans-serif;
+  margin: 8px 0 0 0 ;
+  text-align: end;
+}

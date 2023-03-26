@@ -1,0 +1,25 @@
+<nav class="navBar">
+  <div class="contenedor_botonesImportantes">
+    <h2 class="logo_NombreApp">Teburu Portal</h2>
+    <a href="/nuevaTabla"
+       class="button_nuevaTabla"
+       *ngIf="showBotones">
+      <img class="image_nuevaTabla"
+           src="../../../assets/image/mas.png"
+           alt="logo logOut">
+    </a>
+    <a href="/explorar"
+       class="button_explorarTabla"
+       *ngIf="showBotones">
+      <img class="image_explorarTabla"
+           src="../../../assets/image/table-grid.png"
+           alt="logo logOut">
+    </a>
+  </div>
+  <a href="/"  class="button_logOut">
+    <img class="image_logOut"
+         src="../../../assets/image/logout.png"
+         alt="logo logOut"
+         (click)="cerrarSesion()">
+  </a>
+</nav>

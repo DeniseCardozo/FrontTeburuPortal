@@ -1,0 +1,26 @@
+<div id="id01" class="modal" >
+  <div class="contenedor_Total">
+    <img class="icon_cerrarModal"
+         src="../../assets/image/cerrar.png"
+         alt=""
+         (click)="cerrarModal()" >
+    <div class="container">
+      <h2 class="titulo">Previsualización del schema de la Tabla</h2>
+      <div class="contenedor_Descripcion">
+        <p class="descripcion">Ayudese con esta previsualización para comparar su archivo .xslx</p>
+        <p class="descripcion">La primer fila corresponde a los nombres de las columnas y su correcta forma de ingresarlos</p>
+        <p class="descripcion">La segunda fila le indica el tipo de dato que en esas columnas se debería cumplir</p>
+      </div>
+      <div class="tabla" >
+        <div *ngFor="let columna of esquemaTabla" class="columna">
+          <p class="hcelda">{{columna[0]}}</p>
+          <div class="celdadata">
+            <p class="vcelda"><i>{{columna[1]}}</i></p>
+            <p class="vcelda"><i>{{columna[2]}}</i></p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

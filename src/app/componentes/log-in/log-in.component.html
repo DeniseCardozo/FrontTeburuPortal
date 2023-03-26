@@ -1,0 +1,56 @@
+<div class="contenedorBody">
+  <div class="contenedor_total">
+    <div class="contenedor_presentacion">
+      <div class="contenedor_oscuro">
+        <h2 class="logo_NombreAppLogIn">Teburu Portal</h2>
+        <p class="texto_bienvenida">Bienvenido a TeburuPortal, la app para que subas tus archivos excel sin errores y permitas a otros trabajar más rápido</p>
+      </div>
+    </div>
+    <div class="container_LogIn">
+      <h2 class="titulo_LogIn">LOG IN</h2>
+      <form class="form_LogIn"
+            #formLogIn="ngForm"
+            (ngSubmit)="logIn(formLogIn)">
+        <label class="label_LogIn">Email
+          <input class="input_LogIn"
+                 type="email"
+                 #emailControl="ngModel"
+                 name="email"
+                 [(ngModel)]="datosUsuario.email"
+                 required
+                 pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+        </label>
+        <div *ngIf="emailControl.invalid && emailControl.dirty"
+             class="contenedorAlerta">
+          <p *ngIf="emailControl.errors['required']"
+             class="errorTexto">
+            Campo requerido
+          </p>
+          <p *ngIf="emailControl.errors['pattern'] && emailControl.touched"
+             class="errorTexto">
+            Por favor ingrese un email con el formato <i>"name@example.com"</i>
+          </p>
+        </div>
+
+        <label class="label_LogIn">Contraseña
+          <input class="input_LogIn"
+                 type="password"
+                 #contrasenaControl="ngModel"
+                 name="contrasena"
+                 [(ngModel)]="datosUsuario.contrasena"
+                 required>
+        </label>
+        <div *ngIf="contrasenaControl.invalid && contrasenaControl.dirty"
+             class="contenedorAlerta">
+          <p *ngIf="contrasenaControl.errors['required']"
+             class="errorTexto">
+            Campo requerido
+          </p>
+        </div>
+        <button class="button_LogIn" [disabled]="formLogIn.invalid">
+          Log In
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
