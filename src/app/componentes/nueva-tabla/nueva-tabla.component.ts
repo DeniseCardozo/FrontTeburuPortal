@@ -64,10 +64,12 @@ export class NuevaTablaComponent implements OnInit{
 
   getProyectos() : void  {
     if (this.formNewTablaGroup.value.areas.length > 0) {
-      if (this.formNewTablaGroup.value.areas == "crearNuevo"){
+      if (this.formNewTablaGroup.value.areas == "Insertar nombre área"){
         this.mostrarInputsNewAreaProyecto();
       } else {
+        this.inputNuevoProyecto = false;
         this.inputNuevaArea = false;
+        this.selectProyectos = true;
         this.datosServicio.getAllProyectos(this.formNewTablaGroup.value.areas).subscribe(data => {
           this.datosProyectos = data});
       }
@@ -105,8 +107,7 @@ export class NuevaTablaComponent implements OnInit{
           this.nuevaTabla.area = data});
 
 
-        //volver a activar
-        // this.newProyecto();
+        this.newProyecto();
 
 
       } else {
@@ -118,10 +119,9 @@ export class NuevaTablaComponent implements OnInit{
           this.nuevaTabla.proyecto = data});
       }
     } else {
-      //volver a activar
-      //
-      // this.newArea();
-      //   this.newProyecto();
+
+      this.newArea();
+        this.newProyecto();
     }
 
     this.nuevaTabla.nombre = this.formNewTablaGroup.value.tablaNueva;
@@ -164,17 +164,16 @@ export class NuevaTablaComponent implements OnInit{
 
   mostrarInputsNewAreaProyecto(){
     this.inputNuevaArea = true;
-    this.inputNuevoProyecto = !this.inputNuevoProyecto;
-    this.selectProyectos = !this.selectProyectos;
+    this.inputNuevoProyecto = true;
+    this.selectProyectos = false;
   }
 
   mostrarInputNewProyecto() {
-    if (this.formNewTablaGroup.value.proyectos == "crear_proyecto") {
-      this.inputNuevoProyecto = !this.inputNuevoProyecto;
+    if (this.formNewTablaGroup.value.proyectos == "Insertar nombre proyecto") {
+      this.inputNuevoProyecto = true;
+    } else {
+      this.inputNuevoProyecto = false;
     }
-  }
-
-  revisarValidaciones() {
   }
 
 }

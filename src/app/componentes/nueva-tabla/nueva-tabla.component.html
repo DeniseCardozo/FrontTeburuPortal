@@ -18,7 +18,7 @@
                 value="{{area.id_area}}" >
                 {{area.nombre}}
         </option>
-        <option value="crearNuevo">CREAR ÁREA</option>
+        <option value="Insertar nombre área">CREAR ÁREA</option>
       </select>
 
       <div *ngIf="formNewTablaGroup.controls['areas'].errors && formNewTablaGroup.controls['areas'].touched"
@@ -31,9 +31,11 @@
              type="text"
              name="areas"
              id="input_nuevaArea"
-             placeholder="Insertar nombre de nueva área"
+             placeholder="Insertar nombre de área"
              formControlName="areas"
-             *ngIf="inputNuevaArea">
+             *ngIf="inputNuevaArea"
+             autocomplete="off"
+             spellcheck="false">
 
       <div *ngIf="formNewTablaGroup.controls['areas'].errors && formNewTablaGroup.controls['areas'].dirty"
            class="contenedorAlerta">
@@ -59,7 +61,7 @@
                 value="{{proyecto.id_proyecto}}" >
           {{proyecto.nombre}}
         </option>
-        <option value="crear_proyecto">CREAR PROYECTO</option>
+        <option value="Insertar nombre proyecto">CREAR PROYECTO</option>
       </select>
 
       <div *ngIf="formNewTablaGroup.controls['proyectos'].errors && formNewTablaGroup.controls['proyectos'].touched"
@@ -74,9 +76,11 @@
              type="text"
              name="proyectos"
              id="input_nuevoProyecto"
-             placeholder="Insertar nombre de nuevo proyecto"
+             placeholder="Insertar nombre proyecto"
              formControlName="proyectos"
-             *ngIf="inputNuevoProyecto">
+             *ngIf="inputNuevoProyecto"
+             autocomplete="off"
+             spellcheck="false">
 
       <div *ngIf="formNewTablaGroup.controls['proyectos'].errors && formNewTablaGroup.controls['proyectos'].dirty"
            class="contenedorAlerta">
@@ -91,7 +95,9 @@
                type="text"
                placeholder="Inserte nombre de tabla"
                formControlName="tablaNueva"
-               name="nombre">
+               name="nombre"
+               autocomplete="off"
+               spellcheck="false">
       </label>
 
       <div *ngIf="formNewTablaGroup.controls['tablaNueva'].errors && formNewTablaGroup.controls['tablaNueva'].dirty"
@@ -110,7 +116,9 @@
              name="esquema"
              id="input_schema"
              placeholder="Inserte schema de la tabla"
-             formControlName="esquema">
+             formControlName="esquema"
+             autocomplete="off"
+             spellcheck="false">
 
       <div *ngIf="formNewTablaGroup.controls['esquema'].errors && formNewTablaGroup.controls['esquema'].dirty"
            class="contenedorAlerta">

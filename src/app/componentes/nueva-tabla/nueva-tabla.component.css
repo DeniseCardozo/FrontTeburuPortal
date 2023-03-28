@@ -3,12 +3,12 @@
 }
 
 .contenedorBody {
-  padding: 30px 30px 30px 120px;
+  padding: 30px 0 30px 90px;
+
 }
 
 .contenedor_Formulario {
   background-color:  rgba(0, 0, 0, 0.327);
-  width: 100%;
   padding: 50px 160px;
   border-radius: 8px;
 }
