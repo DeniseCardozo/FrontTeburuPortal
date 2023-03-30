@@ -34,15 +34,9 @@ export class NuevaTablaComponent implements OnInit{
       areas: ["", Validators.compose([
         validarSeleccion,
       ])],
-      // areaNueva: ["", Validators.compose([
-      //   validarSeleccion,
-      // ])],
       proyectos:  ["", Validators.compose([
         validarSeleccion,
       ])],
-      // proyectoNuevo: ["", Validators.compose([
-      //   validarSeleccion,
-      // ])],
       tablaNueva: ["", Validators.compose([
         Validators.required,
       ])],
